@@ -77,13 +77,9 @@ body{
 	align-self: flex-end;
 }
 
-.log-container {
-	align-self: flex-end;
-	margin-right: 10px;
-}
-
 .log {
-	margin: 8px;
+	align-self: flex-end;
+	margin: 15px;
 	font-size: 2vw;
 	background-color: rgba(0,0,0,0);
 	color: var(--secD);

@@ -13,7 +13,7 @@
 	<div class="sidebar" style="display:none" id="sidebar">
 		<div class="sidebar-container">
 	  		<button class="close" onclick="sclose()">&times;</button>
-			<a href="/home">Home</a>
+			<a href="/login">Home</a>
 			<a href="#">Link 2</a>
 			<a href="#">Link 3</a>
 		</div>
@@ -24,42 +24,11 @@
 
 	<div class="container">
   		<button class="open" onclick="sopen()">〉</button>
-		<div class="log-container">
-			<div id="g_id_onload"
-			 data-client_id="532469693622-22sldndpftkgp3k3h9nfkbe2h517f0da.apps.googleusercontent.com"
-			 data-login_uri="https://elsie094081.repl.co/"
-			 data-auto_prompt="false">
-			</div>
-			<div class="g_id_signin"
-			 data-type="standard"
-			 data-size="large"
-			 data-theme="outline"
-			 data-text="sign_in_with"
-			 data-shape="rectangular"
-			 data-logo_alignment="left">
-			</div>
+		<a class="log" href="/login">login</a>
+
 		</div>
 	</div>
-    <script>
-      function onSignIn(googleUser) {
-        var id_token = googleUser.getAuthResponse().id_token;
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-        $.ajax({
-          type: "POST",
-          url: '/google_sign_in',
-          data: JSON.stringify({'id_token': id_token}),
-          success: function() {
-            console.log('login success')
-          },
-          dataType: 'json',
-          contentType:"application/json",
-        });
-      }
-    </script>
+
 	<script src="{{url_for('static', filename='script.js')}}"></script>
 	<script src="https://accounts.google.com/gsi/client" async></script>
 
